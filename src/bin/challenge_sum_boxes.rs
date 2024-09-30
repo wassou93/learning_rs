@@ -14,5 +14,7 @@ fn main() {
 
     let pi = Box::new(std::f64::consts::PI);
     let e = Box::new(std::f64::consts::E);
-    assert_eq!(*sum_boxes(pi, e), std::f64::consts::PI * std::f64::consts::E);
+    assert_eq!(*sum_boxes(pi, e), std::f64::consts::PI + std::f64::consts::E);
+
+    println!("Tests passed!");
 }

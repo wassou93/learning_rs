@@ -6,11 +6,25 @@ struct Rectangle<T, U> {
     height: U,
 }
 
+impl<T, U> Rectangle<T, U> {
+    fn get_width(&self) -> &T {
+        &self.width
+    }
+}
+
+impl Rectangle<u8, u16> {
+    fn get_perimeter(&self) -> u8 {
+        (self.width + self.height as u8) * 2
+    }
+}
+
 fn main() {
     let rect = Rectangle {
         width: 1u8,
         height: 3u16,
     };
     println!("rect is {:?}", rect);
+    println!("width is {}", rect.get_width());
+    println!("perimeter is {}", rect.get_perimeter());
 }
 

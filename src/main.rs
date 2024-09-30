@@ -18,6 +18,10 @@ impl Rectangle<u8, u16> {
     }
 }
 
+fn get_biggest<T: PartialOrd>(a: T, b: T) -> T {
+    if a > b { a } else { b }
+}
+
 fn main() {
     let rect = Rectangle {
         width: 1u8,
@@ -26,5 +30,8 @@ fn main() {
     println!("rect is {:?}", rect);
     println!("width is {}", rect.get_width());
     println!("perimeter is {}", rect.get_perimeter());
+
+    let biggest = get_biggest(100, 200);
+    println!("The biggest value is: {}", biggest);
 }
 

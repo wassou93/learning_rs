@@ -14,14 +14,12 @@ struct SpaceStation {
 }
 
 trait Description {
-    fn describe(&self) -> String;
-}
-
-impl Description for Satelite {
     fn describe(&self) -> String {
-        format!("The {} flying at {} miles per second!", self.name, self.velocity)
+        String::from("This is an object flying through space!")
     }
 }
+
+impl Description for Satelite {} // Using default implementation
 
 impl Description for SpaceStation {
     fn describe(&self) -> String {
